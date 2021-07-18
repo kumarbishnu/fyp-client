@@ -2,10 +2,20 @@ import MainLayout from "../components/layout/main-layout";
 import banner from "../assets/homepage-banner.png";
 import {Card, Container} from "react-bootstrap";
 import CourseList from "../components/course-list";
-import courses from "../courses";
 import {Link} from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+import {useEffect} from "react";
+import {fetchCourses} from "../store/course-actions";
 
 const Homepage = () => {
+
+	const dispatch = useDispatch();
+	const courses = useSelector(state => state.courses.courses);
+
+	useEffect(() => {
+		dispatch(fetchCourses());
+	}, [dispatch])
+
 	return <MainLayout>
 		<Container>
 			<Card className="border-0">
