@@ -1,6 +1,6 @@
 import {Fragment} from "react";
-import MainNav from "./main-nav";
-import Footer from "./footer";
+import MainNav from "../main-nav";
+import Footer from "../footer";
 
 const MainLayout = props => {
 	return <Fragment>

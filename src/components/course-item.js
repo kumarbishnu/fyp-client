@@ -1,5 +1,4 @@
 import {Card} from "react-bootstrap";
-import banner from "../assets/homepage-banner.png";
 import Badge from "./ui/badge";
 
 const CourseItem = (props) => {

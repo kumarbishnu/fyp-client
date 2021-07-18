@@ -16,3 +16,7 @@ code {
     display: grid;
     grid-template-columns: auto auto auto;
 }
+
+input[type=radio] {
+    display: none;
+}
