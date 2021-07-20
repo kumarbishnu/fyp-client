@@ -31,18 +31,14 @@ const MainNav = () => {
 				</Nav>
 				{!userInfo &&
 					<Nav>
-						<LinkContainer to="/login">
-							<Nav.Link className="text-success me-3">Login</Nav.Link>
-						</LinkContainer>
-						<Link to="/register" className="btn btn-outline-success" style={{fontWeight: "600"}}>Register</Link>
+						<Link to="/register" className="btn text-success">Register</Link>
+						<Link to="/login" className="btn btn-success">Login</Link>
 					</Nav>
 				}
 				{userInfo &&
 					<Nav>
-						<LinkContainer to="/dashboard">
-							<Nav.Link className="text-success me-3">{userInfo.name}</Nav.Link>
-						</LinkContainer>
-						<Button variant="outline-danger" onClick={logoutHandler}>Logout</Button>
+						<Link to="/dashboard" className="btn text-success">{userInfo.name}</Link>
+						<Button variant="danger" onClick={logoutHandler}>Logout</Button>
 					</Nav>
 				}
 			</Navbar.Collapse>

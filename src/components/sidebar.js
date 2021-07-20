@@ -1,6 +1,5 @@
 import {Button, Card, Nav, Navbar} from "react-bootstrap";
 import {Link} from "react-router-dom";
-import {useSelector} from "react-redux";
 import {LinkContainer} from "react-router-bootstrap";
 
 const Sidebar = props => {

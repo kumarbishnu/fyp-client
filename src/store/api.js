@@ -5,6 +5,7 @@ const api = {
 	categories: `${api_url}/categories/`,
 	courses: `${api_url}/courses/`,
 	login: `${api_url}/user/login/`,
+	register: `${api_url}/user/register/`,
 }
 
 export default api;
