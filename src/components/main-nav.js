@@ -15,7 +15,7 @@ const MainNav = () => {
 
 	return <Navbar style={{fontWeight: "600"}} >
 		<Container>
-			<Navbar.Brand href="/">CourseDeck</Navbar.Brand>
+			<Link to="/" className="navbar-brand">CourseDeck</Link>
 			<Navbar.Toggle aria-controls="main-nav" />
 			<Navbar.Collapse id="main-nav">
 				<Nav className="mx-auto">

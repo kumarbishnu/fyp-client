@@ -1,13 +1,16 @@
 import {Card} from "react-bootstrap";
 import Badge from "./ui/badge";
 import {Link} from "react-router-dom";
+import {url} from "../store/api";
 
-const CourseItem = (props) => {
+const CourseItem = props => {
+
 	const {course} = props;
+
 	return <div className="col-md-3 mb-4">
 		<Link to={`/courses/${course.id}`} className="text-decoration-none text-reset">
 		<Card className="p-2 border-0 shadow h-100" style={{borderRadius: ".7rem"}}>
-			<Card.Img src={course.image} alt="" className="card-img-top" style={{borderRadius: ".6rem .6rem .2rem .2rem"}} />
+			<Card.Img src={url+course.image} alt="" className="card-img-top" style={{borderRadius: ".6rem .6rem .2rem .2rem", aspectRatio: "16/10", objectFit: "cover"}} />
 			<Card.Body className="p-2 pb-0">
 				<Badge variant="secondary">{course.category}</Badge>
 				<Card.Title className="mt-2 mb-0">{course.title}</Card.Title>

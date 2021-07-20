@@ -20,3 +20,24 @@ code {
 input[type=radio] {
     display: none;
 }
+
+#sidebar .active {
+    color: rgb(34, 154, 22);
+    background: rgba(84, 214, 44, 0.16);
+    border-radius: .4rem;
+    font-weight: 500;
+}
+
+#sidebar .nav-item {
+    cursor: pointer;
+}
+
+.bg-light {
+    background: rgba(145, 158, 171, 0.12) !important;
+}
+
+.dropdown-toggle::after {
+    content: none;
+}
+
+.text-warning {color: #FFC107 !important;}

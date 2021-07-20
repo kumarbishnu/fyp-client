@@ -5,7 +5,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useEffect, useRef} from "react";
 import {login} from "../store/auth-actions";
 
-const LoginPage = params => {
+const LoginPage = props => {
 
 	const dispatch = useDispatch();
 	const userInfo = useSelector(state => state.auth.userInfo);
@@ -14,9 +14,9 @@ const LoginPage = params => {
 
 	useEffect(() => {
 		if (userInfo) {
-			params.history.replace('/dashboard');
+			props.history.replace('/dashboard');
 		}
-	}, [userInfo, params.history])
+	}, [userInfo, props.history])
 
 	const emailRef = useRef();
 	const passwordRef = useRef();
