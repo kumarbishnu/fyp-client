@@ -1,10 +1,10 @@
 import DashboardLayout from "../components/layout/dashboard-layout";
 
-const Dashboard = props => {
+const UserCourses = () => {
 
 	return <DashboardLayout>
-		<h4>Dashboard</h4>
+		<h4>User Courses</h4>
 	</DashboardLayout>
 }
 
-export default Dashboard;
+export default UserCourses;

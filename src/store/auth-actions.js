@@ -19,7 +19,7 @@ export const login = (username, password) => {
 	}
 }
 
-export const register = (user) => {
+export const register = user => {
 	return async dispatch => {
 		dispatch(authActions.register_request());
 		try {
