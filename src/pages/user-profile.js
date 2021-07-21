@@ -3,6 +3,8 @@ import {useDispatch, useSelector} from "react-redux";
 import {get_profile, update_profile} from "../store/user-actions";
 import {Card, Col, Image, Row, Form, Button, ToggleButtonGroup, ToggleButton} from "react-bootstrap";
 import {useEffect, useState} from "react";
+import Notification from "../components/ui/notification";
+import {userActions} from "../store/user-slice";
 
 const UserProfile = () => {
 
@@ -16,6 +18,9 @@ const UserProfile = () => {
 	const [address, setAddress] = useState('');
 	const [gender, setGender] = useState('');
 	const [dob, setDob] = useState('');
+
+	const updateProfile = useSelector(state => state.user.updateProfile);
+	const {loading: updating, error: updateError, success: updated} = updateProfile;
 
 	useEffect(() => {
 		if (!profile) {dispatch(get_profile())}
@@ -88,6 +93,9 @@ const UserProfile = () => {
 							</div>
 							<div className="ms-auto">
 								<Button variant="success" type="submit">Save Changes</Button>
+								{updating && <Notification variant="info" title="Info" message="Updating Profile" />}
+								{updateError && <Notification variant="danger" title="Error" message="Something went wrong!" />}
+								{updated && <Notification variant="success" title="Success" message="Profile successfully updated!" />}
 							</div>
 						</Form>
 					</Col>

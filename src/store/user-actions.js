@@ -40,5 +40,6 @@ export const update_profile = profile => {
 			const payload = get_payload(error);
 			dispatch(userActions.update_fail(payload));
 		}
+		setTimeout(() => dispatch(userActions.update_reset()), 3000)
 	}
 }

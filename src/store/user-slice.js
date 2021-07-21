@@ -19,11 +19,15 @@ const userSlice = createSlice({
 			state.userProfile.error = action.payload;
 		},
 		update_request(state) {state.updateProfile.loading = true;},
-		update_success(state) {state.updateProfile.loading = false;},
+		update_success(state) {
+			state.updateProfile.loading = false;
+			state.updateProfile.success = true;
+		},
 		update_fail(state, action) {
 			state.updateProfile.loading = false;
 			state.updateProfile.error = action.payload;
-		}
+		},
+		update_reset(state) {state.updateProfile = {}}
 	}
 });
 
