@@ -3,6 +3,7 @@ import {createSlice} from "@reduxjs/toolkit";
 const initialState = {
 	userProfile: {profile: null},
 	updateProfile: {},
+	courses: [],
 }
 
 const userSlice = createSlice({
@@ -27,7 +28,8 @@ const userSlice = createSlice({
 			state.updateProfile.loading = false;
 			state.updateProfile.error = action.payload;
 		},
-		update_reset(state) {state.updateProfile = {}}
+		update_reset(state) {state.updateProfile = {}},
+		get_courses(state, action) {state.courses = action.payload},
 	}
 });
 

@@ -41,6 +41,6 @@ input[type=radio] {
 }
 
 .text-warning {color: #FFC107 !important;}
-
+.text-justify {text-align: justify;}
 
 .btn {font-weight: 500;}

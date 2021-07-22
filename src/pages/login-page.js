@@ -35,11 +35,11 @@ const LoginPage = props => {
 				<Link to="/register" className="ms-1 text-success" style={{fontWeight: "500"}}>Register</Link>.
 			</div>
 			<div className="form-floating mb-3">
-				<Form.Control type="email" id="email" required ref={emailRef} />
+				<Form.Control type="email" id="email" placeholder="E-mail" required ref={emailRef} />
 				<label htmlFor="email">Email Address</label>
 			</div>
 			<div className="form-floating mb-4">
-				<Form.Control type="password" id="password" required ref={passwordRef} />
+				<Form.Control type="password" id="password" placeholder="Password" required ref={passwordRef} />
 				<label htmlFor="password">Password</label>
 			</div>
 			<Button variant="success" size="lg" className="w-100" type="submit">Login {loading && <Spinner animation="border" size="sm" />}</Button>

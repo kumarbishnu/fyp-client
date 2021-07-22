@@ -4,7 +4,6 @@ import {get_profile, update_profile} from "../store/user-actions";
 import {Card, Col, Image, Row, Form, Button, ToggleButtonGroup, ToggleButton} from "react-bootstrap";
 import {useEffect, useState} from "react";
 import Notification from "../components/ui/notification";
-import {userActions} from "../store/user-slice";
 
 const UserProfile = () => {
 
@@ -58,23 +57,23 @@ const UserProfile = () => {
 						<Form className="card border-0 shadow p-5" onSubmit={submitHandler}>
 							<div className="d-flex mb-4">
 								<div className="form-floating flex-fill">
-									<Form.Control type="text" id="name" required value={name} onChange={e => setName(e.target.value)} />
+									<Form.Control type="text" id="name" placeholder="Full Name" required value={name} onChange={e => setName(e.target.value)} />
 									<label htmlFor="name">Full Name</label>
 								</div>
 								<div className="mx-3" />
 								<div className="form-floating flex-fill">
-									<Form.Control type="email" id="email" required disabled value={email} />
+									<Form.Control type="email" id="email" placeholder="E-mail" required disabled value={email} />
 									<label htmlFor="email">Email</label>
 								</div>
 							</div>
 							<div className="d-flex mb-4">
 								<div className="form-floating flex-fill">
-									<Form.Control type="text" id="phone" value={phone} onChange={e => setPhone(e.target.value)} />
+									<Form.Control type="text" id="phone" placeholder="Phone" value={phone} onChange={e => setPhone(e.target.value)} />
 									<label htmlFor="phone">Phone</label>
 								</div>
 								<div className="mx-3" />
 								<div className="form-floating flex-fill">
-									<Form.Control type="text" id="address" value={address} onChange={e => setAddress(e.target.value)} />
+									<Form.Control type="text" id="address" placeholder="Address" value={address} onChange={e => setAddress(e.target.value)} />
 									<label htmlFor="address">Address</label>
 								</div>
 							</div>
@@ -87,8 +86,8 @@ const UserProfile = () => {
 								</div>
 								<div className="mx-3" />
 								<div className="form-floating flex-fill">
-									<Form.Control type="date" id="address" value={dob} onChange={e => setDob(e.target.value)} />
-									<label htmlFor="address">Address</label>
+									<Form.Control type="date" id="address" placeholder="Date of Birth" value={dob} onChange={e => setDob(e.target.value)} />
+									<label htmlFor="address">Date of Birth</label>
 								</div>
 							</div>
 							<div className="ms-auto">

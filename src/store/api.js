@@ -4,6 +4,7 @@ const api = {
 	categories: `${api_url}/categories/`,
 	courses: `${api_url}/courses/`,
 	login: `${api_url}/user/login/`,
+	userCourses: `${api_url}/user/courses/`,
 	profile: `${api_url}/user/profile/`,
 	profileUpdate: `${api_url}/user/profile/update/`,
 	register: `${api_url}/user/register/`,

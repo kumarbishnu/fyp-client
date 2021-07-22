@@ -58,19 +58,19 @@ const RegisterPage = props => {
 				<Link to="/login" className="ms-1 text-success" style={{fontWeight: "500"}}>Login</Link>.
 			</div>
 			<div className="form-floating mb-3">
-				<Form.Control type="text" id="name" required ref={nameRef} />
+				<Form.Control type="text" id="name" placeholder="Full Name" required ref={nameRef} />
 				<label htmlFor="name">Full Name</label>
 			</div>
 			<div className="form-floating mb-3">
-				<Form.Control type="email" id="email" required ref={emailRef} />
+				<Form.Control type="email" id="email" placeholder="E-mail" required ref={emailRef} />
 				<label htmlFor="email">Email Address</label>
 			</div>
 			<div className="form-floating mb-3">
-				<Form.Control type="password" id="password" required ref={passwordRef} />
+				<Form.Control type="password" id="password" placeholder="Password" required ref={passwordRef} />
 				<label htmlFor="password">Password</label>
 			</div>
 			<div className="form-floating mb-3">
-				<Form.Control type="password" id="password1" required ref={password2Ref} />
+				<Form.Control type="password" id="password1" placeholder="Confirm Password" required ref={password2Ref} />
 				<label htmlFor="password1">Confirm Password</label>
 			</div>
 			<ToggleButtonGroup name="role" type="radio" className="w-100 mb-4">

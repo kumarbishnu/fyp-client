@@ -43,3 +43,14 @@ export const update_profile = profile => {
 		setTimeout(() => dispatch(userActions.update_reset()), 3000)
 	}
 }
+
+export const fetchUserCourses = () => {
+	return async dispatch => {
+		try {
+			const {data} = await axios.get(api.userCourses, config);
+			dispatch(userActions.get_courses(data));
+		} catch (error) {
+			const payload = get_payload(error);
+		}
+	}
+}

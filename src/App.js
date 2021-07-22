@@ -8,6 +8,7 @@ import LoginPage from "./pages/login-page";
 import RegisterPage from "./pages/register-page";
 import UserProfile from "./pages/user-profile";
 import UserCourses from "./pages/user-courses";
+import TutorCoursePage from "./pages/tutor-course-page";
 
 const App = () => {
 	return <Router>
@@ -15,7 +16,8 @@ const App = () => {
 		<Route path="/courses" component={AllCourses} exact />
 		<Route path="/courses/:id" component={CoursePage} exact />
 		<Route path="/dashboard" component={Dashboard} exact />
-		<Route path="/dashboard/courses" component={UserCourses} />
+		<Route path="/dashboard/courses" component={UserCourses} exact />
+		<Route path="/dashboard/courses/:id" component={TutorCoursePage} />
 		<Route path="/dashboard/profile" component={UserProfile} />
 		<Route path="/login" component={LoginPage} />
 		<Route path="/register" component={RegisterPage} />
