@@ -1,6 +1,6 @@
 import {authActions} from "./auth-slice";
 import axios from "axios";
-import api from "./api";
+import api from "../../api";
 
 const config = {headers: {'Content-type': 'application/json'}};
 

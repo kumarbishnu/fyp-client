@@ -1,6 +1,6 @@
 import {courseActions} from "./course-slice";
 import axios from "axios";
-import api from "./api";
+import api from "../../api";
 
 const get_payload = error => {
 	return error.response && error.response.data.detail

@@ -1,12 +1,10 @@
-import DashboardLayout from "../components/layout/dashboard-layout";
-import {Button, Card, Table} from "react-bootstrap";
+import DashboardLayout from "../../components/layout/dashboard-layout";
 import {Link, Route} from "react-router-dom";
-import AddCourse from "./add-course";
+import AddCourse from "../add-course";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
-import {fetchUserCourses} from "../store/user-actions";
-import CourseList from "../components/course-list";
-import TutorCourses from "../components/tutor-courses";
+import {fetchUserCourses} from "../../store/user/user-actions";
+import TutorCourses from "../../components/dashboard/tutor-courses";
 
 const UserCourses = () => {
 

@@ -1,10 +1,10 @@
-import MainLayout from "../components/layout/main-layout";
+import MainLayout from "../../components/layout/main-layout";
 import {Alert, Button, Card, Col, Container, Row} from "react-bootstrap";
 import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {fetchCourseDetails} from "../store/course-actions";
+import {fetchCourseDetails} from "../../store/course/course-actions";
 
-const CoursePage = ({match, params}) => {
+const CoursePage = ({match}) => {
 
 	const dispatch = useDispatch();
 	const courseDetails = useSelector(state => state.courses.courseDetails);

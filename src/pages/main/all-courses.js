@@ -1,9 +1,9 @@
-import MainLayout from "../components/layout/main-layout";
+import MainLayout from "../../components/layout/main-layout";
 import {useDispatch, useSelector} from "react-redux";
 import {Container} from "react-bootstrap";
 import {useEffect} from "react";
-import CourseList from "../components/course-list";
-import {fetchCourses} from "../store/course-actions";
+import CourseList from "../../components/course-list";
+import {fetchCourses} from "../../store/course/course-actions";
 
 const AllCourses = () => {
 

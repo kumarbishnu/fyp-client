@@ -2,7 +2,7 @@ import {Button, Container, Nav, Navbar} from "react-bootstrap";
 import {LinkContainer} from "react-router-bootstrap";
 import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {authActions} from "../store/auth-slice";
+import {authActions} from "../store/auth/auth-slice";
 
 const MainNav = () => {
 
@@ -25,9 +25,9 @@ const MainNav = () => {
 					<LinkContainer to="/courses">
 						<Nav.Link>All Courses</Nav.Link>
 					</LinkContainer>
-					<LinkContainer to="/contact">
-						<Nav.Link>Contact</Nav.Link>
-					</LinkContainer>
+					{/*<LinkContainer to="/contact">*/}
+					{/*	<Nav.Link>Contact</Nav.Link>*/}
+					{/*</LinkContainer>*/}
 				</Nav>
 				{!userInfo &&
 					<Nav>

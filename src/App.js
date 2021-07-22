@@ -1,13 +1,13 @@
 import {BrowserRouter as Router, Route} from "react-router-dom";
-import AllCourses from "./pages/all-courses";
-import ContactPage from "./pages/contact-page";
-import CoursePage from "./pages/course-page";
-import Dashboard from "./pages/dashboard";
-import Homepage from "./pages/homepage";
-import LoginPage from "./pages/login-page";
-import RegisterPage from "./pages/register-page";
-import UserProfile from "./pages/user-profile";
-import UserCourses from "./pages/user-courses";
+import AllCourses from "./pages/main/all-courses";
+import ContactPage from "./pages/main/contact-page";
+import CoursePage from "./pages/main/course-page";
+import Dashboard from "./pages/dashboard/dashboard";
+import Homepage from "./pages/main/homepage";
+import LoginPage from "./pages/auth/login-page";
+import RegisterPage from "./pages/auth/register-page";
+import UserProfile from "./pages/dashboard/user-profile";
+import UserCourses from "./pages/dashboard/user-courses";
 import TutorCoursePage from "./pages/tutor-course-page";
 
 const App = () => {

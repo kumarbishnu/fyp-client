@@ -1,11 +1,11 @@
-import MainLayout from "../components/layout/main-layout";
-import banner from "../assets/homepage-banner.png";
+import MainLayout from "../../components/layout/main-layout";
+import banner from "../../assets/homepage-banner.png";
 import {Card, Container} from "react-bootstrap";
-import CourseList from "../components/course-list";
+import CourseList from "../../components/course-list";
 import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
-import {fetchCourses} from "../store/course-actions";
+import {fetchCourses} from "../../store/course/course-actions";
 
 const Homepage = () => {
 

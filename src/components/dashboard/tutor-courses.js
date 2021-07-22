@@ -1,5 +1,5 @@
-import {Card, Col, Figure, Image, Row} from "react-bootstrap";
-import Badge from "./ui/badge";
+import {Card, Col, Row} from "react-bootstrap";
+import Badge from "../ui/badge";
 import {Link} from "react-router-dom";
 
 const TutorCourses = props => {

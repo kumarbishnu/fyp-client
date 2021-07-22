@@ -1,9 +1,9 @@
-import LoginLayout from "../components/layout/login-layout";
+import LoginLayout from "../../components/layout/login-layout";
 import {Alert, Button, Form, Spinner} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect, useRef} from "react";
-import {login} from "../store/auth-actions";
+import {login} from "../../store/auth/auth-actions";
 
 const LoginPage = props => {
 

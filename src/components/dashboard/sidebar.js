@@ -32,7 +32,7 @@ const Sidebar = props => {
 				</LinkContainer>
 			</Nav>
 		</div>
-		<Button variant="danger" className="fw-bold"><i className="fas fa-sign-out-alt"/> Logout</Button>
+		<Button variant="danger" className="fw-bold" onClick={props.onLogout}><i className="fas fa-sign-out-alt"/> Logout</Button>
 	</Navbar>
 }
 
