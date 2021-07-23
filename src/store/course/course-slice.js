@@ -8,6 +8,7 @@ const initialState = {
 	imageUpload: {},
 	courseContent: {course: {}},
 	courseUpdate: {},
+	courseDelete: {},
 }
 
 const courseSlice = createSlice({
@@ -35,6 +36,11 @@ const courseSlice = createSlice({
 		course_update_request(state) {state.courseUpdate = {loading: true}},
 		course_update_fail(state, action) {state.courseUpdate = {error: action.payload}},
 		course_update_success(state, action) {state.courseUpdate = {course: action.payload}},
+
+		course_delete_reset(state) {state.courseDelete = {}},
+		course_delete_request(state) {state.courseDelete = {loading: true}},
+		course_delete_fail(state, action) {state.courseDelete = {error: action.payload}},
+		course_delete_success(state) {state.courseDelete = {success: true}},
 	}
 });
 

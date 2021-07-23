@@ -1,12 +1,14 @@
-import {Button, Card, Col, Form, Row} from "react-bootstrap";
+import {Button, Card, Col, Form, Modal, Row, Spinner} from "react-bootstrap";
 import {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {fetchCategories, updateCourse} from "../../store/course/course-actions";
+import {deleteCourse, fetchCategories, updateCourse} from "../../store/course/course-actions";
 import Notification from "../ui/notification";
+import {useHistory} from "react-router-dom";
 
 const EditCourse = props => {
 
 	const dispatch = useDispatch();
+	const history = useHistory();
 	const categories = useSelector(state => state.courses.categories);
 
 	const courseUpdate = useSelector(state => state.courses.courseUpdate);
@@ -15,6 +17,10 @@ const EditCourse = props => {
 	const imageUpload = useSelector(state => state.courses.imageUpload);
 	const {image: uploadSuccess, loading: uploadLoading, error: uploadError} = imageUpload;
 
+	const courseDelete = useSelector(state => state.courses.courseDelete);
+	const {success: deleteSuccess, loading: deleteLoading, error: deleteError} = courseDelete;
+
+	const [show, setShow] = useState(false);
 	const [title, setTitle] = useState();
 	const [description, setDescription] = useState();
 	const [category, setCategory] = useState();
@@ -68,7 +74,29 @@ const EditCourse = props => {
 		setImageFile(null);
 	}
 
+	const showHandler = () => setShow(true);
+	const hideHandler = () => setShow(false);
+	const deleteHandler = () => {
+		dispatch(deleteCourse(props.course.id));
+	}
+	const redirectHandler = () => history.replace('/dashboard/courses');
+	const deleteModal = <Modal show={show} onHide={hideHandler} centered>
+		<Modal.Body>
+			<Modal.Title>{deleteSuccess ? 'Course Deleted!' : 'Are you sure you want to delete this course?'}</Modal.Title>
+		</Modal.Body>
+		{deleteSuccess
+			? <Modal.Footer>
+				<Button variant="secondary" onClick={redirectHandler}>Okay</Button>
+			</Modal.Footer>
+			: <Modal.Footer>
+				<Button variant="danger" onClick={hideHandler}>Cancel</Button>
+				<Button variant="success" onClick={deleteHandler}>Delete {deleteLoading && <Spinner animation="border" size="sm"/> }</Button>
+			</Modal.Footer>
+		}
+	</Modal>
+
 	return <Form className="p-5 shadow rounded" onSubmit={submitHandler}>
+		{deleteModal}
 		{updateLoading && <Notification variant="info" title="Info" message="Updating Course..." />}
 		{uploadLoading && <Notification variant="info" title="Info" message="Uploading Image..." />}
 		{uploadError && <Notification variant="danger" title="Error" message="Something went wrong!" />}
@@ -112,7 +140,7 @@ const EditCourse = props => {
 					<label htmlFor="level">Level</label>
 				</div>
 				<div className="text-end">
-					<Button variant="danger" className="me-3">Delete Course</Button>
+					<Button variant="danger" className="me-3" onClick={showHandler}>Delete Course</Button>
 					<Button variant="success" type="submit">Update Course</Button>
 				</div>
 			</Col>

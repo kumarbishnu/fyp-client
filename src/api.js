@@ -17,7 +17,7 @@ const api = {
 	courseContent: id => `${course_api}/${id}/content/`,
 
 	courseCreate: `${course_api}/create/`,
-	courseDelete: `${course_api}/delete/`,
+	courseDelete: id => `${course_api}/delete/${id}`,
 	courseUpdate: `${course_api}/update/`,
 	courseUpload: `${course_api}/upload/`,
 }

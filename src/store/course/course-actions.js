@@ -91,3 +91,17 @@ export const updateCourse = (course, image) => {
 		setTimeout(() => dispatch(courseActions.course_update_reset()), 3000);
 	}
 }
+
+export const deleteCourse = id => {
+	return async (dispatch, getState) => {
+		dispatch(courseActions.course_delete_request());
+		try {
+			const config = createConfig(getState);
+			const {data} = await axios.delete(api.courseDelete(id), config);
+			dispatch(courseActions.course_delete_success(data));
+		} catch (error) {
+			const payload = createPayload(error);
+			dispatch(courseActions.course_delete_fail(payload));
+		}
+	}
+}

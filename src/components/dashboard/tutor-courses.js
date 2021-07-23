@@ -10,7 +10,7 @@ const TutorCourses = props => {
 				<Card className="h-100 p-3 shadow-sm">
 					<Row className="g-3">
 						<Col md={5}>
-							<Card.Img src={course.image} />
+							<Card.Img src={course.image} style={{aspectRatio: "4/3", objectFit: "cover"}} />
 						</Col>
 						<Col md={7}>
 							<h6>{course.title}</h6>
