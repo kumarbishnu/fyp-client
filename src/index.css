@@ -44,3 +44,8 @@ input[type=radio] {
 .text-justify {text-align: justify;}
 
 .btn {font-weight: 500;}
+
+
+.toast-container {
+    z-index: 9999;
+}
