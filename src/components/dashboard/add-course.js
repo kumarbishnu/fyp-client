@@ -81,7 +81,7 @@ const AddCourse = ({show, onClose}) => {
 					<label htmlFor="title">Title</label>
 				</div>
 				<div className="form-floating mb-3">
-					<Form.Control as="textarea" style={{height: "6rem"}} id="description" placeholder="Description" ref={descriptionRef} />
+					<Form.Control as="textarea" style={{height: "8rem"}} id="description" placeholder="Description" ref={descriptionRef} />
 					<label htmlFor="description">Description</label>
 				</div>
 				<div className="form-floating mb-3">

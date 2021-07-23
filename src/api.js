@@ -13,6 +13,8 @@ const api = {
 	categories: `${api_url}/categories/`,
 
 	courses: `${course_api}/`,
+	courseById: id => `${course_api}/${id}`,
+	courseContent: id => `${course_api}/${id}/content/`,
 
 	courseCreate: `${course_api}/create/`,
 	courseDelete: `${course_api}/delete/`,

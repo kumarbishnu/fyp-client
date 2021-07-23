@@ -13,7 +13,7 @@ export const fetchCourses = () => {
 export const fetchCourseDetails = id => {
 	return async dispatch => {
 		try {
-			const {data} = await axios.get(`${api.courses}${id}`);
+			const {data} = await axios.get(api.courseById(id));
 			dispatch(courseActions.get_course(data));
 		} catch (error) {
 			const payload = createPayload(error);
@@ -28,6 +28,33 @@ export const fetchCategories = () => {
 		dispatch(courseActions.set_categories(data));
 	}
 }
+
+export const fetchCourseContent = id => {
+	return async (dispatch, getState) => {
+		const config = createConfig(getState);
+		const {data} = await axios.get(api.courseContent(id), config);
+		dispatch(courseActions.course_content_success(data));
+	}
+}
+
+export const uploadImage = (id, image) => {
+	return async (dispatch, getState) => {
+		const imageData = new FormData();
+		imageData.append('image', image)
+		imageData.append('course', id)
+		dispatch(courseActions.image_upload_request());
+		try {
+			const config = createFormConfig(getState);
+			const {data} = await axios.post(api.courseUpload, imageData, config);
+			dispatch(courseActions.image_upload_success(data));
+		} catch (error) {
+			const payload = createPayload(error);
+			dispatch(courseActions.image_upload_fail(payload));
+		}
+		setTimeout(() => dispatch(courseActions.image_upload_reset()), 3000);
+	}
+}
+
 
 export const pushCourse = (course, image) => {
 	return async (dispatch, getState) => {
@@ -47,20 +74,20 @@ export const pushCourse = (course, image) => {
 	}
 }
 
-export const uploadImage = (id, image) => {
+export const updateCourse = (course, image) => {
 	return async (dispatch, getState) => {
-		const imageData = new FormData();
-		imageData.append('image', image)
-		imageData.append('course', id)
-		dispatch(courseActions.image_upload_request());
+		dispatch(courseActions.course_update_request());
 		try {
-			const config = createFormConfig(getState);
-			const {data} = await axios.post(api.courseUpload, imageData, config);
-			dispatch(courseActions.image_upload_success(data));
+			const config = createConfig(getState);
+			const {data} = await axios.put(api.courseUpdate, course, config);
+			if (image) {
+				dispatch(uploadImage(data.id, image));
+			}
+			dispatch(courseActions.course_update_success(data));
 		} catch (error) {
 			const payload = createPayload(error);
-			dispatch(courseActions.image_upload_fail(payload));
+			dispatch(courseActions.course_update_fail(payload));
 		}
-		setTimeout(() => dispatch(courseActions.image_upload_reset()), 3000);
+		setTimeout(() => dispatch(courseActions.course_update_reset()), 3000);
 	}
 }

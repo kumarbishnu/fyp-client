@@ -8,7 +8,7 @@ import LoginPage from "./pages/auth/login-page";
 import RegisterPage from "./pages/auth/register-page";
 import UserProfile from "./pages/dashboard/user-profile";
 import UserCourses from "./pages/dashboard/user-courses";
-import TutorCoursePage from "./pages/tutor-course-page";
+import TutorCoursePage from "./pages/dashboard/tutor-course-page";
 
 const App = () => {
 	return <Router>
