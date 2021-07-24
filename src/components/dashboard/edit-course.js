@@ -1,4 +1,4 @@
-import {Button, Card, Col, Form, Modal, Row, Spinner} from "react-bootstrap";
+import {Alert, Button, Card, Col, Form, Modal, Row, Spinner} from "react-bootstrap";
 import {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {deleteCourse, fetchCategories, updateCourse} from "../../store/course/course-actions";
@@ -91,6 +91,7 @@ const EditCourse = props => {
 			: <Modal.Footer>
 				<Button variant="danger" onClick={hideHandler}>Cancel</Button>
 				<Button variant="success" onClick={deleteHandler}>Delete {deleteLoading && <Spinner animation="border" size="sm"/> }</Button>
+				{deleteError && <Alert variant="danger">Something went wrong!</Alert>}
 			</Modal.Footer>
 		}
 	</Modal>

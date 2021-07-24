@@ -20,6 +20,19 @@ const api = {
 	courseDelete: id => `${course_api}/delete/${id}`,
 	courseUpdate: `${course_api}/update/`,
 	courseUpload: `${course_api}/upload/`,
+
+	chapterCreate: `${course_api}/chapter/create/`,
+	chapterDelete: id => `${course_api}/chapter/delete/${id}`,
+	chapterUpdate: `${course_api}/chapter/update/`,
+
+	lectureCreate: `${course_api}/lecture/create/`,
+	lectureDelete: id => `${course_api}/lecture/delete/${id}`,
+	lectureUpdate: `${course_api}/lecture/update/`,
+	lectureUpload: `${course_api}/lecture/upload/`,
+
+	resourceCreate: `${course_api}/resource/create/`,
+	resourceDelete: id => `${course_api}/resource/delete/${id}`,
+	resourceUpdate: `${course_api}/resource/update/`,
 }
 
 export default api;

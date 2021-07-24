@@ -12,7 +12,6 @@ const TutorCoursePage = ({match}) => {
 	const courseContent = useSelector(state => state.courses.courseContent);
 	const {course} = courseContent;
 
-	const [chapters, setChapters] = useState();
 	const [courseDetails, setCourseDetails] = useState();
 
 	useEffect(() => {
@@ -21,7 +20,6 @@ const TutorCoursePage = ({match}) => {
 
 	useEffect(() => {
 		const {chapters: x, ...y} = course;
-		setChapters(x);
 		setCourseDetails(y);
 	}, [course])
 
@@ -32,7 +30,7 @@ const TutorCoursePage = ({match}) => {
 				{courseDetails && <EditCourse course={courseDetails} />}
 			</Tab>
 			<Tab title="Contents" eventKey="contents">
-				{chapters && <EditCourseContent chapters={chapters} />}
+				{course && <EditCourseContent course={course} />}
 			</Tab>
 		</Tabs>
 	</DashboardLayout>
