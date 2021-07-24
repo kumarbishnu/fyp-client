@@ -19,7 +19,7 @@ const RegisterPage = props => {
 
 	useEffect(() => {
 		if (userInfo) {
-			props.history.replace('/dashboard');
+			props.history.replace('/dashboard/profile');
 		}
 	}, [userInfo, props.history])
 

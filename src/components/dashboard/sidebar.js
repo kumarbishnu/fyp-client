@@ -12,7 +12,7 @@ const Sidebar = props => {
 			<Link to="/dashboard/profile/" className="text-reset text-decoration-none">
 				<Card bg="light" border="0" className="my-4" style={{borderRadius: ".8rem"}} >
 					<Card.Body className="d-flex p-3">
-						<Card.Img src={user.image} style={{width: "48px", aspectRatio: "1/1", objectFit: "cover"}} className="p-1 rounded-circle" />
+						<Card.Img src={user.image ? user.image : '/images/user.png'} style={{width: "48px", aspectRatio: "1/1", objectFit: "cover"}} className="p-1 rounded-circle" />
 						<div className="ms-2">
 							<Card.Text className="mb-0" style={{fontWeight: "500"}}>{user.name}</Card.Text>
 							<small className="text-muted">{user.is_tutor ? "Tutor" : "Student"}</small>
@@ -21,9 +21,9 @@ const Sidebar = props => {
 				</Card>
 			</Link>
 			<Nav className="flex-column text-secondary">
-				<LinkContainer to="/dashboard/" exact>
-					<Nav.Item className="p-3"><i className="fas fa-bars me-3"/>Dashboard</Nav.Item>
-				</LinkContainer>
+				{/*<LinkContainer to="/dashboard/" exact>*/}
+				{/*	<Nav.Item className="p-3"><i className="fas fa-bars me-3"/>Dashboard</Nav.Item>*/}
+				{/*</LinkContainer>*/}
 				<LinkContainer to="/dashboard/courses/">
 					<Nav.Item className="p-3"><i className="fas fa-book me-3"/>Courses</Nav.Item>
 				</LinkContainer>

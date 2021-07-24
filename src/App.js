@@ -9,6 +9,7 @@ import RegisterPage from "./pages/auth/register-page";
 import UserProfile from "./pages/dashboard/user-profile";
 import UserCourses from "./pages/dashboard/user-courses";
 import TutorCoursePage from "./pages/dashboard/tutor-course-page";
+import LearnPage from "./pages/main/learn-page";
 
 const App = () => {
 	return <Router>
@@ -19,6 +20,7 @@ const App = () => {
 		<Route path="/dashboard/courses" component={UserCourses} exact />
 		<Route path="/dashboard/courses/:id" component={TutorCoursePage} />
 		<Route path="/dashboard/profile" component={UserProfile} />
+		<Route path="/learn/:id" component={LearnPage} />
 		<Route path="/login" component={LoginPage} />
 		<Route path="/register" component={RegisterPage} />
 		<Route path="/contact" component={ContactPage} />

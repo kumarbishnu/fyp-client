@@ -49,7 +49,7 @@ const UserProfile = () => {
 				<Row>
 					<Col md={4}>
 						<Card border="0" className="shadow p-5 align-items-center justify-content-center" style={{minHeight: "400px"}}>
-							<Image src={profile.image} className="rounded-circle border border-1 p-2" style={{width: "200px", height: "200px", objectFit: "cover"}} />
+							<Card.Img src={profile.image ?  profile.image : '/images/user.png'} className="rounded-circle border p-2" style={{aspectRatio: "1/1", objectFit: "cover"}} />
 							Upload New Image
 						</Card>
 					</Col>
