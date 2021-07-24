@@ -6,6 +6,7 @@ import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import {fetchCourses} from "../../store/course/course-actions";
+import SearchBox from "../../components/searchbox";
 
 const Homepage = () => {
 
@@ -13,7 +14,7 @@ const Homepage = () => {
 	const courses = useSelector(state => state.courses.courses);
 
 	useEffect(() => {
-		dispatch(fetchCourses());
+		dispatch(fetchCourses('?top=true'));
 	}, [dispatch])
 
 	return <MainLayout>
@@ -27,6 +28,7 @@ const Homepage = () => {
 							<p>We believe everyone has the capacity to be creative.<br/>CourseDeck is a place where people
 								develop their <br/> own potential.</p>
 						</blockquote>
+						<SearchBox />
 					</div>
 				</Card.ImgOverlay>
 			</Card>

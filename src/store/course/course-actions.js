@@ -3,9 +3,9 @@ import axios from "axios";
 import api from "../../api";
 import {createConfig, createFormConfig, createPayload} from "../helpers";
 
-export const fetchCourses = () => {
+export const fetchCourses = query => {
 	return async dispatch => {
-		const {data} = await axios.get(api.courses);
+		const {data} = await axios.get(api.courses+query);
 		dispatch(courseActions.get_all(data));
 	}
 }
