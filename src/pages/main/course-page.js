@@ -107,7 +107,7 @@ const CoursePage = ({match}) => {
 						</Row>
 					</Card>
 					<Row>
-						<Col md={6}>
+						<Col md={6} className="mx-auto">
 							<Accordion className="p-5 mt-5 shadow mx-auto">
 								<h5 className="mb-4">Course Contents</h5>
 								{course.chapters && course.chapters.map(chapter =>

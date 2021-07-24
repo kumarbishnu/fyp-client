@@ -4,6 +4,7 @@ const initialState = {
 	userProfile: {profile: null},
 	updateProfile: {},
 	courses: [],
+	imageUpload: {},
 }
 
 const userSlice = createSlice({
@@ -26,6 +27,12 @@ const userSlice = createSlice({
 		},
 		update_reset(state) {state.updateProfile = {}},
 		get_courses(state, action) {state.courses = action.payload},
+
+
+		image_upload_reset(state) {state.imageUpload = {}},
+		image_upload_request(state) {state.imageUpload = {loading: true}},
+		image_upload_fail(state, action) {state.imageUpload = {error: action.payload}},
+		image_upload_success(state) {state.imageUpload = {success: true}},
 	}
 });
 

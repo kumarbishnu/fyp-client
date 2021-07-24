@@ -8,6 +8,7 @@ const api = {
 
 	profile: `${user_api}/profile/`,
 	profileUpdate: `${user_api}/profile/update/`,
+	profileUpload: `${user_api}/profile/upload/`,
 	userCourses: `${user_api}/courses/`,
 
 	categories: `${api_url}/categories/`,
