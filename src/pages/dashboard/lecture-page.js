@@ -1,9 +1,10 @@
-import {Button, Form} from "react-bootstrap";
+import {Button, Form, Table} from "react-bootstrap";
 import {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {createLecture, updateLecture} from "../../store/lecture/lecture-actions";
 import {fetchCourseContent} from "../../store/course/course-actions";
 import Notification from "../../components/ui/notification";
+import {createResource, deleteResource} from "../../store/resource/resource-actions";
 
 const LecturePage = ({match, history}) => {
 
@@ -24,11 +25,16 @@ const LecturePage = ({match, history}) => {
 	const [text_content, setText_content] = useState('');
 	const [file_content, setFile_content] = useState();
 
+	const [resources, setResources] = useState([]);
+	const [displayName, setDisplayName] = useState('');
+	const [url, setUrl] = useState('');
+
 	useEffect(() => {
 		if (state) {
 			setNumber(state.number);
 			setTitle(state.title);
 			setText_content(state.text_content)
+			setResources(state.resources);
 		} else {
 			setNumber('');
 			setTitle('');
@@ -44,6 +50,18 @@ const LecturePage = ({match, history}) => {
 			dispatch(createLecture({chapter: match.params.chapter_id, number, title, text_content}, file_content))
 		}
 		dispatch(fetchCourseContent(match.params.course_id));
+	}
+
+	const addResourceHandler = () => {
+		dispatch(createResource({lecture: state.id, display_name: displayName, url}))
+		dispatch(fetchCourseContent(match.params.course_id))
+		setUrl('');
+		setDisplayName('');
+	}
+
+	const deleteResourceHandler = id => {
+		dispatch(deleteResource(id));
+		dispatch(fetchCourseContent(match.params.course_id))
 	}
 
 	return <div className="p-5 shadow">
@@ -76,6 +94,34 @@ const LecturePage = ({match, history}) => {
 			</div>
 			<Button variant="success" type="submit">{state ? 'Update' : 'Add'} Lecture</Button>
 		</Form>
+		{state &&
+			<div className="mt-4">
+				<h5>Resources</h5>
+				<Table>
+					<thead>
+						<tr>
+							<th>Action</th>
+							<th>Display Name</th>
+							<th>URL</th>
+						</tr>
+					</thead>
+					<tbody>
+						{resources && resources.map(resource =>
+							<tr key={resource.id}>
+								<td><Button variant="danger" size="sm" onClick={e => deleteResourceHandler(resource.id)}><i className="fas fa-trash-alt"/></Button></td>
+								<td>{resource.display_name}</td>
+								<td>{resource.url}</td>
+							</tr>
+						)}
+						<tr>
+							<td><Button variant="success" size="sm" onClick={addResourceHandler}><i className="fas fa-plus"/></Button></td>
+							<td><Form.Control placeholder="Display Name" value={displayName} onChange={e => setDisplayName(e.target.value)} /></td>
+							<td><Form.Control placeholder="URL" value={url} onChange={e => setUrl(e.target.value)} /></td>
+						</tr>
+					</tbody>
+				</Table>
+			</div>
+		}
 	</div>
 }
 

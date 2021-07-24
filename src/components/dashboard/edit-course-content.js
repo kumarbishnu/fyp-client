@@ -100,7 +100,7 @@ const EditCourseContent = props => {
 										<Card.Text className="mb-0">{lecture.number}. {lecture.title}</Card.Text>
 										<div>
 											<Link to={{pathname: `/dashboard/courses/${course.id}/${chapter.id}/lecture`, state: lecture}} className="text-info text-decoration-none me-3"><i className="fas fa-edit"/></Link>
-											<Button variant="link" onClick={() => deleteHandler({lecture: lecture.id})} className="text-danger text-decoration-none"><i className="fas fa-trash-alt"/></Button>
+											<Button variant="link" onClick={() => deleteHandler({lecture: lecture.id})} className="text-danger p-0 text-decoration-none"><i className="fas fa-trash-alt"/></Button>
 										</div>
 									</div>
 								)}
