@@ -33,6 +33,8 @@ const api = {
 	resourceCreate: `${course_api}/resource/create/`,
 	resourceDelete: id => `${course_api}/resource/delete/${id}`,
 	resourceUpdate: `${course_api}/resource/update/`,
+
+	enroll: id =>`${course_api}/${id}/enroll/`,
 }
 
 export default api;

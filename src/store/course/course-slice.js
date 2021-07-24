@@ -9,6 +9,7 @@ const initialState = {
 	courseContent: {course: {}},
 	courseUpdate: {},
 	courseDelete: {},
+	enroll: {},
 }
 
 const courseSlice = createSlice({
@@ -40,6 +41,11 @@ const courseSlice = createSlice({
 		course_delete_request(state) {state.courseDelete = {loading: true}},
 		course_delete_fail(state, action) {state.courseDelete = {error: action.payload}},
 		course_delete_success(state) {state.courseDelete = {success: true}},
+
+		enroll_reset(state) {state.enroll = {}},
+		enroll_request(state) {state.enroll = {loading: true}},
+		enroll_success(state) {state.enroll = {success: true}},
+		enroll_fail(state, action) {state.enroll = {error: action.payload}},
 	}
 });
 

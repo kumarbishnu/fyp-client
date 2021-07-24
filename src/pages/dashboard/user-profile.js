@@ -1,7 +1,7 @@
 import DashboardLayout from "../../components/layout/dashboard-layout";
 import {useDispatch, useSelector} from "react-redux";
 import {get_profile, update_profile} from "../../store/user/user-actions";
-import {Card, Col, Image, Row, Form, Button, ToggleButtonGroup, ToggleButton} from "react-bootstrap";
+import {Card, Col, Row, Form, Button, ToggleButtonGroup, ToggleButton} from "react-bootstrap";
 import {useEffect, useState} from "react";
 import Notification from "../../components/ui/notification";
 

@@ -37,7 +37,7 @@ const MainNav = () => {
 				}
 				{userInfo &&
 					<Nav>
-						<Link to="/dashboard" className="btn text-success">{userInfo.name}</Link>
+						<Link to="/dashboard/profile" className="btn text-success">{userInfo.name}</Link>
 						<Button variant="danger" onClick={logoutHandler}>Logout</Button>
 					</Nav>
 				}

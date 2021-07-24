@@ -26,7 +26,7 @@ const LearnLecture = ({history}) => {
 		<Fragment>
 			<h5>Resources</h5>
 			{lecture.resources.map(resource =>
-				<a href={resource.url} target="_blank">{resource.display_name} <i className="fas fa-external-link-alt me-3"/></a>
+				<a href={resource.url} target="_blank" rel="noreferrer">{resource.display_name} <i className="fas fa-external-link-alt me-3"/></a>
 			)}
 		</Fragment>
 		}

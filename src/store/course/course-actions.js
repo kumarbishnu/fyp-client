@@ -31,8 +31,7 @@ export const fetchCategories = () => {
 
 export const fetchCourseContent = id => {
 	return async (dispatch, getState) => {
-		const config = createConfig(getState);
-		const {data} = await axios.get(api.courseContent(id), config);
+		const {data} = await axios.get(api.courseContent(id));
 		dispatch(courseActions.course_content_success(data));
 	}
 }
@@ -103,5 +102,21 @@ export const deleteCourse = id => {
 			const payload = createPayload(error);
 			dispatch(courseActions.course_delete_fail(payload));
 		}
+	}
+}
+
+
+export const enrollCourse = id => {
+	return async (dispatch, getState) => {
+		dispatch(courseActions.enroll_request());
+		try {
+			const config = createConfig(getState);
+			await axios.get(api.enroll(id), config);
+			dispatch(courseActions.enroll_success());
+		} catch (error) {
+			const payload = createPayload(error);
+			dispatch(courseActions.enroll_fail(payload));
+		}
+		setTimeout(() => dispatch(courseActions.enroll_reset()), 3000);
 	}
 }
