@@ -16,10 +16,10 @@ const StudentCourses = props => {
 							<Col md={7}>
 								<h6>{course.title}</h6>
 								<Badge variant="secondary">{course.category}</Badge>
-								<Card.Text className="text-muted mt-1 mb-0">
-									<span className="text-warning">{course.rating}<i className="fas fa-star mx-2" /></span>
-									<span>({course.review_count})</span>
-								</Card.Text>
+								{/*<Card.Text className="text-muted mt-1 mb-0">*/}
+								{/*	<span className="text-warning">{course.rating}<i className="fas fa-star mx-2" /></span>*/}
+								{/*	<span>({course.review_count})</span>*/}
+								{/*</Card.Text>*/}
 								<Card.Text className="mb-0">{course.student_count} <span className="text-muted">Student</span></Card.Text>
 								<Card.Text className="mb-0"><i className="fas fa-book text-warning me-2" />{course.lecture_count} lectures</Card.Text>
 								<Card.Text className="mb-0"><i className="fas fa-brain text-success me-2" />{course.level}</Card.Text>

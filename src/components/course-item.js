@@ -16,10 +16,10 @@ const CourseItem = props => {
 			</Card.Body>
 			<Card.Footer className="bg-white p-2 border-0">
 				<div className="d-flex justify-content-between">
-					<Card.Text className="text-muted mb-1">
-						<span className="text-warning">{course.rating}<i className="fas fa-star mx-2" /></span>
-						<span>({course.review_count})</span>
-					</Card.Text>
+					{/*<Card.Text className="text-muted mb-1">*/}
+					{/*	<span className="text-warning">{course.rating}<i className="fas fa-star mx-2" /></span>*/}
+					{/*	<span>({course.review_count})</span>*/}
+					{/*</Card.Text>*/}
 					<Card.Text>{course.student_count} <span className="text-muted">Student</span></Card.Text>
 				</div>
 				<div className="d-flex justify-content-between">

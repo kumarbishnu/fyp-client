@@ -35,7 +35,7 @@ const DashboardLayout = props => {
 	return <div className="vh-100 d-flex" style={{maxWidth: "100vw", maxHeight: "100vh"}}>
 		{profile && <Fragment>
 			<Sidebar user={profile} onLogout={logoutHandler} />
-			<div className="w-100">
+			<div className="ms-auto pb-5" style={{width: "85%"}}>
 				<DashboardNav image={profile.image} onLogout={logoutHandler} />
 				<Container>
 					{props.children}

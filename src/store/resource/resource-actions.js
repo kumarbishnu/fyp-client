@@ -14,7 +14,7 @@ export const createResource = resource => {
 			const payload = createPayload(error);
 			dispatch(resourceActions.resource_create_fail(payload));
 		}
-		setTimeout(() => dispatch(resourceActions.resource_create_reset()),3000);
+		// setTimeout(() => dispatch(resourceActions.resource_create_reset()),3000);
 	}
 }
 

@@ -20,6 +20,9 @@ const LecturePage = ({match, history}) => {
 	const lectureUpload = useSelector(state1 => state1.lecture.lectureUpload);
 	const {success: uploadLecture, loading: uploadLoading, error: uploadError} = lectureUpload;
 
+	const resourceCreate = useSelector(state1 => state1.resource.resourceCreate);
+	const {resource} = resourceCreate;
+
 	const [number, setNumber] = useState('');
 	const [title, setTitle] = useState('');
 	const [text_content, setText_content] = useState('');
@@ -42,6 +45,14 @@ const LecturePage = ({match, history}) => {
 		}
 	}, [state])
 
+	useEffect(() => {
+		if (resource) {
+			let x = [...resources];
+			x.push(resource)
+			setResources(x);
+		}
+	}, [resource])
+
 	const submitHandler = event => {
 		event.preventDefault();
 		if (state) {
@@ -62,6 +73,10 @@ const LecturePage = ({match, history}) => {
 	const deleteResourceHandler = id => {
 		dispatch(deleteResource(id));
 		dispatch(fetchCourseContent(match.params.course_id))
+		let x = [...resources];
+		let index = x.findIndex(x => x.id === id);
+		x.splice(index);
+		setResources(x);
 	}
 
 	return <div className="p-5 shadow">

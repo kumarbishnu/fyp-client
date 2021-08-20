@@ -6,7 +6,7 @@ const Sidebar = props => {
 
 	const {user} = props;
 
-	return <Navbar className="p-3 vh-100 d-flex flex-column justify-content-between align-items-stretch border-end" id="sidebar" style={{width: "20rem"}}>
+	return <Navbar className="p-3 vh-100 position-fixed d-flex flex-column justify-content-between align-items-stretch border-end" id="sidebar" style={{width: "20rem"}}>
 		<div>
 			<Link to="/" className="navbar-brand">CourseDeck</Link>
 			<Link to="/dashboard/profile/" className="text-reset text-decoration-none">
